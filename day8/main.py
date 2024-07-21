@@ -33,8 +33,12 @@ should_end = False
 while not should_end:
 
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-    text = input("Type your message:\n").lower()
-    shift = int(input("Type the shift number:\n"))
+    if direction == "encode" or direction == "decode":
+        text = input("Type your message:\n").lower()
+        shift = int(input("Type the shift number:\n"))
+    else:
+        print("Invalid Entry")
+        break
     # TODO-2: What if the user enters a shift that is greater than the number of letters in the alphabet?
     # Try running the program and entering a shift number of 45.
     # Add some code so that the program continues to work even if the user enters a shift number greater than 26.
